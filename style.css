@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --color1: rgba(228, 124, 100, 0.693);
+    --color2: rgb(74, 5, 5);
+    background-color: var(--color1);
+    background-image: linear-gradient(45deg, var(--color2) 25%, transparent 25%, transparent 75%, var(--color2) 75%, var(--color2)),
+                      linear-gradient(45deg, var(--color2) 25%, var(--color1) 25%, var(--color1) 75%, var(--color2) 75%, var(--color2));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+.camera-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px;
+}
+
+#cam {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 0 auto;
+}
+
+
+.connect-section {
+    margin: 20px 0;
+}
+
+#connect {
+    background: linear-gradient(45deg, #28a745, #34ce57);
+    border: none;
+    color: white;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#connect:hover {
+    background: linear-gradient(45deg, #218838, #28a745);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+#connect:active {
+    transform: translateY(0);
+}
+
+
+.controller {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.control-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+}
+
+
+.movement-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.movement-controls .control-btn:nth-child(1) { 
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.movement-controls .control-btn:nth-child(2) {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.movement-controls .control-btn:nth-child(3) { 
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.movement-controls .control-btn:nth-child(4) { 
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.movement-controls .control-btn:nth-child(5) { 
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.movement-controls .control-btn:nth-child(6) { 
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.movement-controls .control-btn:nth-child(7) { 
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.movement-controls .control-btn:nth-child(8) { 
+    grid-column: 3;
+    grid-row: 3;
+}
+
+
+.robot-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.robot-controls .control-btn:nth-child(1) { 
+    grid-column: span 3;
+}
+
+.robot-controls .control-btn:nth-child(2),
+.robot-controls .control-btn:nth-child(3),
+.robot-controls .control-btn:nth-child(4) { 
+    grid-column: span 1;
+}
+
+.robot-controls .control-btn:nth-child(5),
+.robot-controls .control-btn:nth-child(6),
+.robot-controls .control-btn:nth-child(7) { 
+    grid-column: span 1;
+}
+
+
+.control-btn {
+    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    line-height: 1.2;
+}
+
+.control-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.control-btn:hover::before {
+    left: 100%;
+}
+
+.control-btn:hover {
+    background: linear-gradient(135deg, #5b4ae4 0%, #9085fb 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+}
+
+.control-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(108, 92, 231, 0.3);
+}
+
+.control-btn.active {
+    background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
+    box-shadow: 0 4px 20px rgba(253, 121, 168, 0.5);
+    animation: pulse 0.3s ease;
+}
+
+.control-btn:disabled {
+    background: linear-gradient(135deg, #636e72 0%, #b2bec3 100%);
+    cursor: not-allowed;
+    opacity: 0.6;
+    transform: none;
+    box-shadow: none;
+}
+
+.control-btn:disabled::before {
+    display: none;
+}
+
+
+#modeToggle {
+    background: linear-gradient(135deg, #ff7675 0%, #fd79a8 100%);
+}
+
+#modeToggle:hover {
+    background: linear-gradient(135deg, #e84393 0%, #ff6b9d 100%);
+}
+
+#camToggle, #camStream, #track {
+    background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+}
+
+#camToggle:hover, #camStream:hover, #track:hover {
+    background: linear-gradient(135deg, #00a085 0%, #00b5b8 100%);
+}
+
+
+.key-hint {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-top: 3px;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+
+.status-indicator {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.status-indicator.connected {
+    background: rgba(46, 204, 113, 0.9);
+}
+
+
+.instructions {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 30px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 600px;
+    width: 100%;
+}
+
+.instructions h3 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.instructions ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.instructions li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.instructions li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: #74b9ff;
+    font-size: 0.8rem;
+}
+
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .controller {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 25px;
+    }
+
+    .movement-controls {
+        max-width: 280px;
+        gap: 12px;
+    }
+
+    .robot-controls {
+        max-width: 350px;
+        gap: 12px;
+    }
+
+    .control-btn {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+        min-height: 55px;
+    }
+
+    .status-indicator {
+        top: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    #cam {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.6rem;
+    }
+
+    .controller {
+        padding: 20px;
+    }
+
+    .movement-controls {
+        max-width: 240px;
+        gap: 10px;
+    }
+
+    .robot-controls {
+        max-width: 280px;
+        gap: 10px;
+    }
+
+    .control-btn {
+        padding: 8px 10px;
+        font-size: 0.75rem;
+        min-height: 50px;
+    }
+
+    .key-hint {
+        font-size: 0.7rem;
+    }
+
+    .instructions {
+        padding: 20px;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .control-btn:hover {
+        transform: none;
+        box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+    }
+
+    .control-btn:active {
+        transform: scale(0.98);
+    }
+}

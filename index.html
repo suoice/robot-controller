@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32 Robot Controller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ESP32 Robot Controller</h1>
+        </div>
+
+        <div class="camera-section">
+            <img id="cam" src="" alt="Camera stream will appear here" />
+        </div>
+
+        <div class="connect-section">
+            <button id="connect">Connect to ESP32</button>
+        </div>
+
+        <div class="controller">
+            <div class="control-section">
+                <div class="section-title">Movement Controls</div>
+                <div class="movement-controls">
+                    <button id="led1" class="control-btn" disabled>
+                        Forward
+                        <div class="key-hint">W</div>
+                    </button>
+                    <button id="led2" class="control-btn" disabled>
+                        Backward
+                        <div class="key-hint">S</div>
+                    </button>
+                    <button id="led3" class="control-btn" disabled>
+                        Turn Left
+                        <div class="key-hint">A</div>
+                    </button>
+                    <button id="led4" class="control-btn" disabled>
+                        Turn Right
+                        <div class="key-hint">D</div>
+                    </button>
+                    <button id="led5" class="control-btn" disabled>
+                        Strafe Left
+                        <div class="key-hint">U</div>
+                    </button>
+                    <button id="led6" class="control-btn" disabled>
+                        Strafe Right
+                        <div class="key-hint">I</div>
+                    </button>
+                    <button id="led7" class="control-btn" disabled>
+                        Raise
+                        <div class="key-hint">J</div>
+                    </button>
+                    <button id="led8" class="control-btn" disabled>
+                        Lower
+                        <div class="key-hint">K</div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="control-section">
+                <div class="section-title">Robot Controls</div>
+                <div class="robot-controls">
+                    <button id="modeToggle" class="control-btn" disabled>Toggle Mode</button>
+                    <button id="clawRest" class="control-btn" disabled>Claw Rest</button>
+                    <button id="clawRaise" class="control-btn" disabled>Raise Claw</button>
+                    <button id="clawLower" class="control-btn" disabled>Lower Claw</button>
+                    <button id="camToggle" class="control-btn" disabled>Toggle FPV</button>
+                    <button id="camStream" class="control-btn" onclick="loadStream()" disabled>Stream</button>
+                    <button id="track" class="control-btn" disabled>Track</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>Instructions</h3>
+            <ul>
+                <li>Click "Connect to ESP32" to establish Bluetooth connection</li>
+                <li>Use keyboard keys Q,W,E,R,A,S,D,F for movement controls</li>
+                <li>Movement controls work with both touch/click and keyboard</li>
+                <li>Robot controls are click/touch only</li>
+                <li>Camera stream updates automatically when connected</li>
+                <li>Status indicator shows connection state</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="status" class="status-indicator">Disconnected</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
